@@ -9,14 +9,36 @@
 #import "ZPDFPageController.h"
 #import "ZPDFView.h"
 
+@interface ZPDFPageController()<UIScrollViewDelegate>
+{
+    ZPDFView *pdfView;
+}
+
+@end
+
 @implementation ZPDFPageController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ZPDFView *pdfView = [[ZPDFView alloc] initWithFrame:self.view.bounds atPage:(int)self.pageNO withPDFDoc:self.pdfDocument];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    scrollView.showsVerticalScrollIndicator=NO;
+    scrollView.showsHorizontalScrollIndicator=NO;
+    scrollView.minimumZoomScale=1.0f;
+    scrollView.maximumZoomScale=3.0f;
+    scrollView.delegate=self;
+    [self.view addSubview:scrollView];
+    
+    pdfView = [[ZPDFView alloc] initWithFrame:scrollView.bounds atPage:(int)self.pageNO withPDFDoc:self.pdfDocument];
     pdfView.backgroundColor=[UIColor whiteColor];
-    [self.view addSubview:pdfView];
+    [scrollView addSubview:pdfView];
+    
+    scrollView.contentSize=pdfView.bounds.size;
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return pdfView;
 }
 
 - (void)didReceiveMemoryWarning {

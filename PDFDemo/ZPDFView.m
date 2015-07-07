@@ -24,7 +24,6 @@
     // before we start drawing.
     CGContextTranslateCTM(context, 0.0, self.bounds.size.height);
     CGContextScaleCTM(context, 1.0, -1.0);
-    
     if (pageNO == 0) {
         pageNO = 1;
     }
