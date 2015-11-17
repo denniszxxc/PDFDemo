@@ -9,10 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ZPDFPageModel.h"
 
-@interface ZPDFReaderController : UIViewController
-{
-     UIPageViewController *pageViewCtrl;
-     ZPDFPageModel *pdfPageModel;
-}
-@property(nonatomic,copy)NSString *titleText, *fileName;
+@interface ZPDFReaderController : UIViewController<ZPDFPageModelDelegate>
+
+@property(nonatomic,copy)NSString *fileName, *subDirName;
 @end

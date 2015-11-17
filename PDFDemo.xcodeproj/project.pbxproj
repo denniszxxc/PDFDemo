@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113C348D1BFAFF3800F8BAFE /* files in Resources */ = {isa = PBXBuildFile; fileRef = 113C348C1BFAFF3800F8BAFE /* files */; };
+		113C348F1BFB1ECE00F8BAFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 113C348E1BFB1ECE00F8BAFE /* InfoPlist.strings */; };
 		11DEF9B21B45085400D241D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DEF9B11B45085400D241D6 /* main.m */; };
 		11DEF9B51B45085400D241D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DEF9B41B45085400D241D6 /* AppDelegate.m */; };
 		11DEF9C31B45085400D241D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11DEF9C21B45085400D241D6 /* Images.xcassets */; };
@@ -17,9 +19,6 @@
 		11DEF9E71B4508CF00D241D6 /* ZPDFPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DEF9E01B4508CF00D241D6 /* ZPDFPageModel.m */; };
 		11DEF9E81B4508CF00D241D6 /* ZPDFReaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DEF9E21B4508CF00D241D6 /* ZPDFReaderController.m */; };
 		11DEF9E91B4508CF00D241D6 /* ZPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DEF9E41B4508CF00D241D6 /* ZPDFView.m */; };
-		11DEF9ED1B4508DD00D241D6 /* 001.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 11DEF9EA1B4508DD00D241D6 /* 001.pdf */; };
-		11DEF9EE1B4508DD00D241D6 /* 002.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 11DEF9EB1B4508DD00D241D6 /* 002.pdf */; };
-		11DEF9EF1B4508DD00D241D6 /* 003.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 11DEF9EC1B4508DD00D241D6 /* 003.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		113C348C1BFAFF3800F8BAFE /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
+		113C348E1BFB1ECE00F8BAFE /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		11DEF9AC1B45085400D241D6 /* PDFDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DEF9B01B45085400D241D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11DEF9B11B45085400D241D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,9 +54,6 @@
 		11DEF9E21B4508CF00D241D6 /* ZPDFReaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPDFReaderController.m; sourceTree = "<group>"; };
 		11DEF9E31B4508CF00D241D6 /* ZPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPDFView.h; sourceTree = "<group>"; };
 		11DEF9E41B4508CF00D241D6 /* ZPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPDFView.m; sourceTree = "<group>"; };
-		11DEF9EA1B4508DD00D241D6 /* 001.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 001.pdf; sourceTree = "<group>"; };
-		11DEF9EB1B4508DD00D241D6 /* 002.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 002.pdf; sourceTree = "<group>"; };
-		11DEF9EC1B4508DD00D241D6 /* 003.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 003.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +125,10 @@
 		11DEF9AF1B45085400D241D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				11DEF9EA1B4508DD00D241D6 /* 001.pdf */,
-				11DEF9EB1B4508DD00D241D6 /* 002.pdf */,
-				11DEF9EC1B4508DD00D241D6 /* 003.pdf */,
+				113C348C1BFAFF3800F8BAFE /* files */,
 				11DEF9B01B45085400D241D6 /* Info.plist */,
 				11DEF9B11B45085400D241D6 /* main.m */,
+				113C348E1BFB1ECE00F8BAFE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -233,11 +230,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11DEF9EF1B4508DD00D241D6 /* 003.pdf in Resources */,
-				11DEF9ED1B4508DD00D241D6 /* 001.pdf in Resources */,
+				113C348D1BFAFF3800F8BAFE /* files in Resources */,
+				113C348F1BFB1ECE00F8BAFE /* InfoPlist.strings in Resources */,
 				11DEF9C61B45085400D241D6 /* LaunchScreen.xib in Resources */,
 				11DEF9C31B45085400D241D6 /* Images.xcassets in Resources */,
-				11DEF9EE1B4508DD00D241D6 /* 002.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

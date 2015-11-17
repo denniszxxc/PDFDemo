@@ -9,9 +9,11 @@
 #import "ZPDFListViewController.h"
 #import "ZPDFReaderController.h"
 
+#define IOS7 ([[[UIDevice currentDevice]systemVersion] floatValue] >= 7.0)
+#define kSubDirectory @"files"
+
 @interface ZPDFListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, retain)NSArray *titleArray;
 @property (nonatomic, retain)NSArray *fileArray;
 
 @end
@@ -20,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"PDF浏览Demo";
+    self.title=@"我的PDF";
     self.view.backgroundColor=[UIColor whiteColor];
     
     pdfTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -32,21 +34,39 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.titleArray.count;
+    return self.fileArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 80;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"pdfTableView_cell";
     UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell.textLabel.numberOfLines=0;
+        cell.detailTextLabel.textColor=[UIColor colorWithWhite:.6 alpha:.8];
+        
+        if (IOS7) {
+            cell.separatorInset = UIEdgeInsetsZero;
+            cell.layoutMargins = UIEdgeInsetsZero;
+            cell.preservesSuperviewLayoutMargins = NO;
+        }
     }
-    NSString *titleText = [self.titleArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = titleText;
+    NSURL *url = self.fileArray[indexPath.row];
+    NSString *fileName = nil;
+    NSDate *createDate = nil;
+    [url getResourceValue:&fileName forKey:NSURLNameKey error:nil];
+    
+    [url getResourceValue:&createDate forKey:NSURLCreationDateKey error:nil];
+    NSDateFormatter *formatter1 = [[NSDateFormatter alloc] init];
+    [formatter1 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *showtimeNew = [formatter1 stringFromDate:createDate];
+    
+    cell.textLabel.text = [fileName substringToIndex:fileName.length-4];
+    cell.detailTextLabel.text=showtimeNew;
     return cell;
 }
 
@@ -54,28 +74,17 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     ZPDFReaderController *targetViewCtrl = [[ZPDFReaderController alloc] init];
-    targetViewCtrl.titleText = self.titleArray[indexPath.row];
-    targetViewCtrl.fileName =  self.fileArray[indexPath.row];
+    targetViewCtrl.fileName = [self.fileArray[indexPath.row] lastPathComponent];
+    targetViewCtrl.subDirName=kSubDirectory;
     [self.navigationController pushViewController:targetViewCtrl animated:YES];
-}
-
--(NSArray*)titleArray
-{
-    if(!_titleArray)
-    {
-        _titleArray=@[
-                      @"iOS 开发笔记——PDF的显示和浏览",
-                      @"Objective-C和CoreFoundation对象相互转换的内存管理总结",
-                      @"HTML5从入门到精通"];
-    }
-    return _titleArray;
 }
 
 -(NSArray*)fileArray
 {
     if(!_fileArray)
     {
-        _fileArray=@[@"001.pdf", @"002.pdf",  @"003.pdf"];
+        NSArray *urls = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"pdf" subdirectory:kSubDirectory];
+        _fileArray = [[NSArray alloc]initWithArray:urls];
     }
     return _fileArray;
 }

@@ -42,6 +42,10 @@
         return nil;
     }
     index--;
+    if(_delegate && [_delegate respondsToSelector:@selector(pageChanged:)])
+    {
+        [_delegate pageChanged:index];
+    }
     return [self viewControllerAtIndex:index];
 }
 
@@ -54,6 +58,10 @@
     long pageSum = CGPDFDocumentGetNumberOfPages(pdfDocument);
     if (index >= pageSum+1) {
         return nil;
+    }
+    if(_delegate && [_delegate respondsToSelector:@selector(pageChanged:)])
+    {
+        [_delegate pageChanged:index];
     }
     return [self viewControllerAtIndex:index];
 }
