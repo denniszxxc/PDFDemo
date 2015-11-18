@@ -54,6 +54,18 @@
     [pageViewCtrl didMoveToParentViewController:self];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+}
+
 -(void)pageChanged:(NSInteger)page
 {
     [[NSUserDefaults standardUserDefaults] setInteger:page forKey:_fileName];

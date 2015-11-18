@@ -31,7 +31,8 @@
     CGPDFPageRef page = CGPDFDocumentGetPage(pdfDocument, pageNO);
     CGContextSaveGState(context);
     {
-        CGAffineTransform pdfTransform = CGPDFPageGetDrawingTransform(page, kCGPDFCropBox, CGRectInset(self.bounds, -60, 0), 0, true);
+        CGRect rect = CGRectInset(self.bounds, -50, -95);
+        CGAffineTransform pdfTransform = CGPDFPageGetDrawingTransform(page, kCGPDFCropBox, rect, 0, true);
         CGContextConcatCTM(context, pdfTransform);
         CGContextDrawPDFPage(context, page);
     }
@@ -48,7 +49,7 @@
         CGContextSetRGBFillColor (context,  1, 1, 1, 1.0);
         long pageSum = CGPDFDocumentGetNumberOfPages(pdfDocument);
         NSString *pageStr=[NSString stringWithFormat:@"第%d页，共%ld页",pageNO,pageSum];
-        CGRect rect1=CGRectMake(0, self.bounds.size.height-30, self.bounds.size.width, 20);
+        CGRect rect1=CGRectMake(0, self.bounds.size.height -30, self.bounds.size.width, 20);
         NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
         paragraphStyle.alignment = NSTextAlignmentCenter;
         NSDictionary *attributes=@{
