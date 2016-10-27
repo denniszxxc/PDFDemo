@@ -27,13 +27,14 @@
     scrollView.minimumZoomScale=1.0f;
     scrollView.maximumZoomScale=3.0f;
     scrollView.delegate=self;
+    scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:scrollView];
     
     pdfView = [[ZPDFView alloc] initWithFrame:scrollView.bounds atPage:(int)self.pageNO withPDFDoc:self.pdfDocument];
     pdfView.backgroundColor=[UIColor whiteColor];
+    pdfView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [scrollView addSubview:pdfView];
     
-    scrollView.contentSize=pdfView.bounds.size;
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView

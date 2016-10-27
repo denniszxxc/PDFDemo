@@ -18,6 +18,7 @@
     
     ZPDFListViewController *listPdf=[[ZPDFListViewController alloc]init];
     UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:listPdf];
+    nav.navigationBar.translucent = NO;
     self.window.rootViewController=nav;
     
     return YES;

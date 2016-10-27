@@ -199,6 +199,7 @@
 				TargetAttributes = {
 					11DEF9AB1B45085400D241D6 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = T2Z4V5DWHX;
 					};
 					11DEF9CA1B45085400D241D6 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -375,7 +376,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T2Z4V5DWHX;
 				INFOPLIST_FILE = PDFDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -385,7 +388,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T2Z4V5DWHX;
 				INFOPLIST_FILE = PDFDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -15,8 +15,19 @@
     if(self){
         pageNO = index;
         pdfDocument = pdfDoc;
+        
+        // Uses CATiledLayer to Improve pdf quality when zoomed-in
+        CATiledLayer *tiledLayer = (CATiledLayer *)[self layer];
+        tiledLayer.levelsOfDetail = 4;
+        tiledLayer.levelsOfDetailBias = 2;
+        tiledLayer.tileSize = self.frame.size;  // Avoid to many boxes
     }
     return self;
+}
+
++ (Class)layerClass
+{
+    return [CATiledLayer class];
 }
 
 -(void)drawInContext:(CGContextRef)context atPageNo:(int)page_no{
@@ -31,7 +42,7 @@
     CGPDFPageRef page = CGPDFDocumentGetPage(pdfDocument, pageNO);
     CGContextSaveGState(context);
     {
-        CGRect rect = CGRectInset(self.bounds, -50, -95);
+        CGRect rect = CGRectInset(self.bounds, 0, 0);
         CGAffineTransform pdfTransform = CGPDFPageGetDrawingTransform(page, kCGPDFCropBox, rect, 0, true);
         CGContextConcatCTM(context, pdfTransform);
         CGContextDrawPDFPage(context, page);
