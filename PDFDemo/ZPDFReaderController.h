@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ZPDFPageModel.h"
+#import "ZPDFReaderBottomView.h"
 
-@interface ZPDFReaderController : UIViewController<ZPDFPageModelDelegate>
+@interface ZPDFReaderController : UIViewController<ZPDFPageModelDelegate, ZPDFReaderBottomViewDelegate, UIPageViewControllerDelegate>
 
 @property(nonatomic,copy)NSString *fileName, *subDirName;
 @end

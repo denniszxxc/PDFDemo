@@ -19,6 +19,8 @@
 		11DEF9E71B4508CF00D241D6 /* ZPDFPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DEF9E01B4508CF00D241D6 /* ZPDFPageModel.m */; };
 		11DEF9E81B4508CF00D241D6 /* ZPDFReaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DEF9E21B4508CF00D241D6 /* ZPDFReaderController.m */; };
 		11DEF9E91B4508CF00D241D6 /* ZPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DEF9E41B4508CF00D241D6 /* ZPDFView.m */; };
+		95E2F8091DC1F75A00C656F4 /* ZPDFReaderBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E2F8081DC1F75A00C656F4 /* ZPDFReaderBottomView.m */; };
+		95E2F80B1DC1F77600C656F4 /* ZPDFReaderBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E2F80A1DC1F77600C656F4 /* ZPDFReaderBottomView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,9 @@
 		11DEF9E21B4508CF00D241D6 /* ZPDFReaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPDFReaderController.m; sourceTree = "<group>"; };
 		11DEF9E31B4508CF00D241D6 /* ZPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPDFView.h; sourceTree = "<group>"; };
 		11DEF9E41B4508CF00D241D6 /* ZPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPDFView.m; sourceTree = "<group>"; };
+		95E2F8071DC1F75A00C656F4 /* ZPDFReaderBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPDFReaderBottomView.h; sourceTree = "<group>"; };
+		95E2F8081DC1F75A00C656F4 /* ZPDFReaderBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPDFReaderBottomView.m; sourceTree = "<group>"; };
+		95E2F80A1DC1F77600C656F4 /* ZPDFReaderBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZPDFReaderBottomView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +90,9 @@
 				11DEF9DE1B4508CF00D241D6 /* ZPDFPageController.m */,
 				11DEF9E31B4508CF00D241D6 /* ZPDFView.h */,
 				11DEF9E41B4508CF00D241D6 /* ZPDFView.m */,
+				95E2F8071DC1F75A00C656F4 /* ZPDFReaderBottomView.h */,
+				95E2F8081DC1F75A00C656F4 /* ZPDFReaderBottomView.m */,
+				95E2F80A1DC1F77600C656F4 /* ZPDFReaderBottomView.xib */,
 			);
 			name = ZPDFReader;
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 				113C348F1BFB1ECE00F8BAFE /* InfoPlist.strings in Resources */,
 				11DEF9C61B45085400D241D6 /* LaunchScreen.xib in Resources */,
 				11DEF9C31B45085400D241D6 /* Images.xcassets in Resources */,
+				95E2F80B1DC1F77600C656F4 /* ZPDFReaderBottomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +264,7 @@
 				11DEF9E51B4508CF00D241D6 /* ZPDFListViewController.m in Sources */,
 				11DEF9E91B4508CF00D241D6 /* ZPDFView.m in Sources */,
 				11DEF9B51B45085400D241D6 /* AppDelegate.m in Sources */,
+				95E2F8091DC1F75A00C656F4 /* ZPDFReaderBottomView.m in Sources */,
 				11DEF9E71B4508CF00D241D6 /* ZPDFPageModel.m in Sources */,
 				11DEF9B21B45085400D241D6 /* main.m in Sources */,
 				11DEF9E61B4508CF00D241D6 /* ZPDFPageController.m in Sources */,

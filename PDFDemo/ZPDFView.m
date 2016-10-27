@@ -53,25 +53,6 @@
 - (void)drawRect:(CGRect)rect {
     CGContextRef context=UIGraphicsGetCurrentContext();
     
-    //画页码
-    CGContextSaveGState(context);
-    {
-        CGContextSetLineWidth(context, 1.0);
-        CGContextSetRGBFillColor (context,  1, 1, 1, 1.0);
-        long pageSum = CGPDFDocumentGetNumberOfPages(pdfDocument);
-        NSString *pageStr=[NSString stringWithFormat:@"第%d页，共%ld页",pageNO,pageSum];
-        CGRect rect1=CGRectMake(0, self.bounds.size.height -30, self.bounds.size.width, 20);
-        NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-        paragraphStyle.alignment = NSTextAlignmentCenter;
-        NSDictionary *attributes=@{
-                                   NSFontAttributeName:[UIFont systemFontOfSize:14],
-                                   NSParagraphStyleAttributeName : paragraphStyle,
-                                   NSForegroundColorAttributeName: [UIColor colorWithWhite:.6 alpha:.6]
-                                   };
-        [pageStr drawInRect:rect1 withAttributes:attributes];
-    }
-    CGContextRestoreGState(context);
-    
     //画PDF内容
     [self drawInContext:context atPageNo:pageNO];
 }
